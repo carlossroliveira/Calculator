@@ -1,0 +1,221 @@
+/* ===== Configuration initial ============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== variable ============================== */
+$base-color: #7AD9DD;
+$base-color-secondary: #474E64;
+$base-color-tertiary: #6c757d;
+$base-bgc: #40916c;
+$base-bgc-secondary: #0096c7;
+$base-bgc-tertiary:#3C4559;
+
+/* ===== Mixin ============================== */
+@mixin positionFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html {
+    font-size: 62.5%;
+
+    body {
+        font-size: 1.6rem; // Tamanho da fonte 16px
+        @include positionFlex;
+        min-height: 100vh;
+        background-color: $base-color;
+
+        main {
+            display: flex;
+
+            .colors {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-evenly;
+                height: 150px;
+                padding-right: 5rem;
+
+                div {
+                    cursor: pointer;
+                    font-size: 2.6rem;
+                    font-weight: 900;
+                }
+
+                div:nth-child(1) {
+                    color: $base-color-tertiary;
+                }
+
+                div:nth-child(2) {
+                    color: $base-bgc;
+                }
+
+                div:nth-child(3) {
+                    color: $base-bgc-secondary;
+                }
+
+                div:nth-child(4) {
+                    font-size: 2rem;
+                    color: #212121;
+                }
+            }
+
+            /* ===== container ============================== */
+            .container {
+                position: relative;
+                overflow: hidden;
+                z-index: 10;
+                border-radius: 6px;
+                border-radius: 3rem;
+                backdrop-filter: blur(15px);
+                background-color: rgba(255, 255, 255, 0.05);
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                border-left: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+                .calculator {
+                    position: relative;
+                    display: grid;
+
+                    .screen {
+                        grid-column: span 4;
+                        height: 140px;
+                        width: 300px;
+                        text-align: right;
+                        border: none;
+                        outline: none;
+                        padding: 10px;
+                        font-size: 30px;
+                        background-color: white;
+                        color: $base-color;
+                        cursor: unset;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                    }
+
+                    /* ===== Button ============================== */
+                    .btn {
+                        display: grid;
+                        place-items: center;
+                        width: 75px;
+                        height: 75px;
+                        padding: 20px;
+                        font-size: 20px;
+                        transition: 0.5s;
+                        cursor: pointer;
+                        user-select: none;
+                        background-color: $base-color-secondary;
+                        border: none;
+                        color: white;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+                        &:hover {
+                            color: white;
+                            font-size: 24px;
+                            font-weight: 500;
+                            background: rgb(122, 217, 221);
+                            background: radial-gradient(circle, rgba(122, 217, 221, 1) 0%, rgba(60, 69, 89, 1) 100%);
+                        }
+                    }
+
+                    /* ===== Colors ============================== */
+                    .clear {
+                        grid-column: span 2;
+                        width: 150px;
+                    }
+
+                    .zero {
+                        grid-column: span 2;
+                        width: 150px;
+                    }
+
+                    .colorFull {
+                        background-color: #6F8AEB;
+                    }
+
+                    .colorArrow-c {
+                        background-color: $base-bgc-tertiary;
+                    }
+
+                    .activeOne {
+                        background-color: $base-color-tertiary;
+                    }
+
+                    .activeTwo {
+                        background-color: $base-bgc;
+                    }
+
+                    .activeThree {
+                        background-color: $base-bgc-secondary;
+                    }
+
+
+                }
+            }
+
+            /* ===== GitHub Corners ============================== */
+            .github-corner:hover .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+
+            @keyframes octocat-wave {
+
+                0%,
+                100% {
+                    transform: rotate(0)
+                }
+
+                20%,
+                60% {
+                    transform: rotate(-25deg)
+                }
+
+                40%,
+                80% {
+                    transform: rotate(10deg)
+                }
+            }
+
+            /* ===== Average ============================== */
+            @media (max-width:500px) {
+                .github-corner:hover .octo-arm {
+                    animation: none
+                }
+
+                .github-corner .octo-arm {
+                    animation: octocat-wave 560ms ease-in-out
+                }
+            }
+        }
+    }
+}
+
+
+/* ===== Average ============================== */
+@media(max-width: 1080px) {
+    html {
+        font-size: 93.75%;
+
+        body {
+            font-size: 1rem; // Tamanho da fonte 15px
+
+
+        }
+    }
+}
+
+@media(max-width: 720px) {
+    html {
+        font-size: 87.5%;
+
+        body {
+            font-size: 1rem; // Tamanho da fonte 14px
+
+
+        }
+    }
+}
