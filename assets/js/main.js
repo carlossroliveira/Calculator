@@ -52,21 +52,16 @@
   /* ===== Check Result End ============================== */
 
   /* ===== Check switch Start ============================== */
-  function checkOperator(value) {
-    switch (value) {
-      case "+":
-        return true;
-      case "-":
-        return true;
-      case "*":
-        return true;
-      case "/":
-        return true;
+  const checkOperator = (value) => {
+    const operators = {
+      "+": true,
+      "-": true,
+      "*": true,
+      "/": true,
+    };
+    return operators[value];
+  };
 
-      default:
-        return false;
-    }
-  }
   /* ===== Check switch End ============================== */
 
   /* ===== Delete Previous Start ============================== */
@@ -97,11 +92,19 @@
     });
   };
   /* ===== Função removendo Classes ============================== */
-  const removeAll = (element, colors) => element.forEach((el) => el.classList.remove(...colors));
+  const removeAll = (element, colors) =>
+    element.forEach((el) => el.classList.remove(...colors));
   /* ===== Executando Funções ============================== */
-  colorOne.addEventListener("click", () => handleColor("activeOne", "activeTwo", "activeThree"));
-  colorTwo.addEventListener("click", () => handleColor("activeTwo", "activeOne", "activeThree"));
-  colorThree.addEventListener("click", () => handleColor("activeThree", "activeTwo", "activeOne"));
-  switchoff.addEventListener("click", () => removeAll(colors, ["activeOne", "activeTwo", "activeThree"]));
-
+  colorOne.addEventListener("click", () =>
+    handleColor("activeOne", "activeTwo", "activeThree")
+  );
+  colorTwo.addEventListener("click", () =>
+    handleColor("activeTwo", "activeOne", "activeThree")
+  );
+  colorThree.addEventListener("click", () =>
+    handleColor("activeThree", "activeTwo", "activeOne")
+  );
+  switchoff.addEventListener("click", () =>
+    removeAll(colors, ["activeOne", "activeTwo", "activeThree"])
+  );
 })();
