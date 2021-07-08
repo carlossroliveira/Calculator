@@ -1,7 +1,7 @@
 <h1 align="center"> 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Calculator - Project </h1>
 
 ---
-![Calculator](https://user-images.githubusercontent.com/63623377/123855391-410f2c80-d8f6-11eb-81d8-56647587db40.gif)
+![calculator](https://user-images.githubusercontent.com/63623377/125003497-b503b000-e02d-11eb-9843-330b8f398d07.gif)
 
 ---
 
